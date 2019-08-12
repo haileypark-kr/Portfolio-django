@@ -1,0 +1,188 @@
+{% extends 'masterpage.html' %}
+{% block proj %}
+<!-- Projects list -->
+<div id="projects-start" sec-name="1">
+  <section class="portfolio" id="portfolio">
+    <div class="container" style="margin-top: 20px">
+
+      <h3 class="text-center text-uppercase mb-0 section-name"><i class="fas fa-code-branch"></i> Projects</h3>
+      <hr class="star-dark mb-5">
+
+
+      <div class="row" style="max-width: 1080px">
+        {% for post in posts %}
+        <div class="col-md-6 col-lg-4 image-wrapper mb-50">
+          <h4 class="post-title">{{ post.title }}</h4>
+          <img class="img-fluid" src="{{ post.poster.url }}" alt="">
+
+
+          <a class="btn-example" style="cursor: pointer" picture_id="{{ forloop.counter }}">
+            <div class="project-hover-text">
+              <p class="hover-text">Details!</p>
+            </div>
+          </a>
+        </div>
+
+
+        <!-- POPUP LAYER! -->
+        <div class="modal fade pop-layer" id="exmapleModalLong" picture_id="{{ forloop.counter }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header" style="padding:10px; padding-left:20px;">
+                <h3>{{ post.title }}</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">x</span>
+                </button>
+              </div>
+              <div class="modal-body" style="padding: 20px">
+                <p class="date">{{ post.startdate }} ~ {{ post.enddate }}</p> <br>
+                <p>{{ post.kr_desc }}</p>
+                <p>{{ post.en_desc }}</p>
+                {% if post.poster %}
+                <img src="{{ post.poster.url }}" style="max-width: 700px; width: 100%"> <br>
+                <a class="modal-exp" style="margin: 20px;">Example Image</a> <br>
+                <img src="{{ post.examples.url }}" style="max-width: 400px; width:100%">
+                <br>
+                <a class="modal-exp" href="download{{ post.pdf_file.url }}">Download</a>
+                {% endif %}
+              </div>
+
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
+<!-- Project list END -->
+
+<!-- Work Experience List-->
+<div class="work-start" style="margin-top: 100px" sec-name="2">
+  <section class="work" id="work">
+    <div class="container" style="margin-top: 20px">
+      <h3 class="text-center text-uppercase mb-0 section-name"><i class="far fa-keyboard"></i> Work</h3>
+      <hr class="star-dark mb-5">
+
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-50">
+          <h4 class="post-title">추천시스템 외주 개발</h4>
+
+          <p class="date">Oct. 2018 ~ Jan. 2019</p>
+          <ul class="desc">
+            <li>킨터치의 Exhibitor - Visitor 상호 추천 엔진 개발</li>
+            <li>Popularity, category, pair counting, SVD, Funk SVD, NMF 모델 앙상블</li>
+            <li>실제 상황에 적용하기 위해 밀도별로 앙상블 조합 테스트</li>
+            <li>php에서 사용가능한 API 개발</li>
+            <li>API 유지보수 작업</li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-50">
+          <h4 class="post-title">Research Assistant</h4>
+          <p class="date">July 3, 2017 ~ Today</p>
+          <ul class="desc">
+            <li>fWHR 측정, 논문 작성</li>
+            <li><a href="http://54.180.152.248/">fWHR 측정 Demo site</a> 개발, 유지 보수</li>
+            <li>Voice formant 자동 측정 프로그램 개발</li>
+          </ul>
+        </div>
+      </div>
+  </section>
+  </div>
+  <!-- Work Experience list END-->
+
+
+  <!-- Experience List -->
+  <div id="exp-start" style="margin-top: 100px" sec-name="3">
+    <section class="exp" id="exp">
+      <div class="container" style="margin-top: 20px">
+        <h3 class="text-center text-uppercase mb-0 section-name"><i class="far fa-lightbulb"></i> Experience</h3>
+        <hr class="star-dark mb-5">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-50">
+            <a href="http://prography.org/" target="_blank">
+              <h4 class="post-title">Prography</h4>
+            </a>
+            <p class="date">Oct. 6, 2017 ~ Jan. 26, 2019</p>
+            <ul class="desc">
+              <li>1기, 2기 부회장 및 딥러닝 멘토</li>
+              <li>3기 딥러닝 멘토장</li>
+              <li>1기 iFontMe, 2기 Highlight Tekken 멘토링 및 개발</li>
+              <li>3기 예의 바른 너구리, 오늘 어디가? 멘토링</li>
+              <li>Image-to-Video Translation(LiveGAN) 연구</li>
+              <li>Recommender System 연구 및 외주 작업</li>
+            </ul>
+          </div>
+
+
+
+          <div class="col-md-6 col-lg-4 mb-50">
+            <h4 class="post-title">융합기초프로젝트</h4>
+            <p class="date">July 3, 2017 ~ Aug. 26, 2017</p>
+            <ul class="desc">
+              <li>서울과기대와 연합, 디자인사고 프로젝트 진행</li>
+              <li>아기의 수면 중 질식 예방 프로젝트</li>
+              <li>아두이노와 자이로센서를 활용한 침대 프로토타입 제작</li>
+            </ul>
+          </div>
+
+
+          <div class="col-md-6 col-lg-4 mb-50">
+            <h4 class="post-title">KUSITMS</h4>
+            <p class="date">Sep. 3, 2016 ~ June 24, 2017</p>
+            <ul class="desc">
+              <li>15기 교육팀</li>
+              <li>플랫폼 비즈니스 강연</li>
+              <li>소액결제 묶음 배송 프로젝트 진행, 프로토타입 개발</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Experience End -->
+
+  <!-- Awards List START!!! -->
+  <div id="awards-start" style="margin-top: 100px" sec-name="4">
+    <section class="awards" id="awards">
+      <div class="container" style="margin-top: 20px">
+        <h3 class="text-center text-uppercase mb-0 section-name"><i class="fas fa-award"></i> Awards</h3>
+        <hr class="star-dark mb-5">
+
+        <div class="row">
+
+          <div class="col-md-6 col-lg-4 mb-50" style="margin: auto">
+            <h4 class="post-title">SK T&B Code Challenge</h4>
+            <p style="font-size: small">Fifth Place (mAP 29.98%)</p>
+            <p>Oksusu 서비스의 영화 시청 데이터로, 추천 엔진 개발</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </div>
+  <!-- Awards End -->
+
+  <!-- Contact START! -->
+  <div id="contact-start" style="margin-top: 100px" sec-name="5">
+    <section class="contact" id="contact">
+      <div class="container" style="margin-top: 20px">
+        <div class="row">
+          <div class="col-md-4 col-lg-4" style="margin:auto">
+            <a href="https://github.com/tngusqkr1" style="margin:20px" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/%EC%88%98%ED%98%84-%EB%B0%95-40b012161/" target="_blank" style="margin:20px">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  {% endblock %}

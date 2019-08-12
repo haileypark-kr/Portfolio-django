@@ -1,0 +1,79 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue"></script>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    {#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">#}
+    <link rel="stylesheet" href="{% static "css/self.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Roboto|Pacifico|Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <title>Soohyun</title>
+</head>
+
+<body id="page-top">
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+        <p class="navbar-brand pagename mb-0">Soohyun</p>
+        <button class="navbar-toggler navbar-toggler-right" style="z-index: 2;" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item" sec-name="1">
+                    <p class="nav-link">Projects</p>
+                </li>
+                <li class="nav-item" sec-name="2">
+                    <p class="nav-link">Work</p>
+                </li>
+                <li class="nav-item" sec-name="3">
+                    <p class="nav-link">Experience</p>
+                </li>
+                <li class="nav-item" sec-name="4">
+                    <p class="nav-link">Awards</p>
+                </li>
+                <li class="nav-item" sec-name="5">
+                    <p class="nav-link">Contact</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Header -->
+<header style="margin-top: 150px; margin-bottom: 100px">
+    <div>
+        <h1 class="text-uppercase mb-0">Soohyun Park</h1>
+        <h5 class="font-weight-light mb-0">- KT Software Engineer -</h5>
+    </div>
+</header>
+
+<!-- Projects -->
+{% block proj %} {% endblock %}
+
+
+<footer class="container py-5">
+    <div class="row">
+        <div class="col-12 col-md">
+            <p class="my-name">Soohyun Park</p>
+            <p style="font-size: x-small"><i class="fas fa-envelope-square" style="font-size: x-small; color: grey"></i>
+                 soohyun.park@kt.com</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script><script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js" class=""></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js" class=""></script>
+<script src="{% static "js/popup.js" %}"></script>
+
+
+</body>
+</html>
